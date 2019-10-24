@@ -1,2 +1,2 @@
-# -ML-Algorithrm
-Implement mechine learning algorithms with python without sklearn.
+# ML-Algorithm
+Implement machine learning algorithms with python without sklearn.

@@ -1,11 +1,3 @@
-# python3
-# -*- coding: utf-8 -*-
-# @File    : DecisionTreeRegressor.py
-# @Desc    : 一种回归决策树
-# @Project : ML-Algorithm
-# @Time    : 10/23/19 3:05 PM
-# @Author  : Loopy
-# @Contact : peter@mail.loopy.tech
 import numpy as np
 
 
