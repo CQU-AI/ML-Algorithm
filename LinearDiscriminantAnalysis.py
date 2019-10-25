@@ -1,3 +1,6 @@
+import numpy as np
+
+
 class LinearDiscriminantAnalysis:
     """ Linear Discriminant Analysis
     Dependency
