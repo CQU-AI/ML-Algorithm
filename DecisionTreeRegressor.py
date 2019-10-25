@@ -107,7 +107,7 @@ class DecisionTreeRegressor:
         pred = np.zeros(X.shape[0])
         for i in range(X.shape[0]):
             cur_node = 0
-            while self._nodes[cur_node].left_child != -1:  # search in tree
+            while self._nodes[cur_node].left_child != -1 and self._nodes[cur_node].threshold is not None:  # search in tree
                 if (
                     X[i][self._nodes[cur_node].feature]
                     <= self._nodes[cur_node].threshold
