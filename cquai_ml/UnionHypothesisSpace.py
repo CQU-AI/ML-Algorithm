@@ -8,7 +8,7 @@
 # @Contact : peter@mail.loopy.tech
 # @License : CC BY-NC-SA 4.0 (subject to project license)
 
-from DatasetSpace import DatasetSpace
+from .DatasetSpace import DatasetSpace
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
