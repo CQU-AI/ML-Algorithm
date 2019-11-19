@@ -13,7 +13,7 @@ import numpy as np
 
 class TreeNode:
     def __init__(
-            self, feature=None, threshold=None, impurity=None, n_node=None, value=None
+        self, feature=None, threshold=None, impurity=None, n_node=None, value=None
     ):
         self.left_child = -1
         self.right_child = -1
@@ -68,7 +68,10 @@ class DecisionTreeClassifier:
         for i in range(X.shape[1]):
             inti = self._inti(X, i)
             ind = np.argsort(X[:, i])
-            y_cnt_left, y_cnt_right = np.bincount([], minlength=self.n_classes_), y_cnt.copy()
+            y_cnt_left, y_cnt_right = (
+                np.bincount([], minlength=self.n_classes_),
+                y_cnt.copy(),
+            )
             n_left, n_right = 0, X.shape[0]
 
             for j in range(ind.shape[0] - 1):
@@ -77,17 +80,20 @@ class DecisionTreeClassifier:
                 n_left += 1
                 n_right -= 1
                 if j + 1 < ind.shape[0] - 1 and np.isclose(
-                        X[ind[j], i], X[ind[j + 1], i]
+                    X[ind[j], i], X[ind[j + 1], i]
                 ):
                     continue
-                cur_improvement = (n_left * self._entropy(y_cnt_left) + n_right * self._entropy(y_cnt_right)) / inti
+                cur_improvement = (
+                    n_left * self._entropy(y_cnt_left)
+                    + n_right * self._entropy(y_cnt_right)
+                ) / inti
 
                 if cur_improvement > best_improvement:
                     best_improvement = cur_improvement
                     best_feature = i
                     best_threshold = X[ind[j], i]
                     best_left_ind = ind[: j + 1]
-                    best_right_ind = ind[j + 1:]
+                    best_right_ind = ind[j + 1 :]
 
         self._nodes.append(
             TreeNode(
@@ -130,8 +136,8 @@ class DecisionTreeClassifier:
             cur_node = 0
             while self._nodes[cur_node].left_child != -1:
                 if (
-                        X[i][self._nodes[cur_node].feature]
-                        <= self._nodes[cur_node].threshold
+                    X[i][self._nodes[cur_node].feature]
+                    <= self._nodes[cur_node].threshold
                 ):
                     cur_node = self._nodes[cur_node].left_child
                 else:
@@ -143,7 +149,7 @@ class DecisionTreeClassifier:
 from sklearn.datasets import load_breast_cancer
 from sklearn.tree import DecisionTreeClassifier as skDecisionTreeClassifier
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     X, y = load_breast_cancer(return_X_y=True)
     clf1 = DecisionTreeClassifier(max_depth=1).fit(X, y)
     clf2 = skDecisionTreeClassifier(max_depth=1, random_state=0).fit(X, y)

@@ -6,3 +6,4 @@ from .LinearDiscriminantAnalysis import LinearDiscriminantAnalysis
 from .LogisticRegression import LogisticRegression
 from .LinearRegression import LinearRegression
 from .UnionHypothesisSpace import UnionHypothesisSpace
+from .Tao import TAO
