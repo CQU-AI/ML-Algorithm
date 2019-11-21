@@ -38,6 +38,8 @@ Contributing
 ------------
 Everyone is welcomed to contribute!
 
+ | Note: To maintain code cleanliness, besides functional, this project should also be code-quality-issue-free. In other words, code should pass Bandit, Prospector and PyLint with no warning. Click the ``code quality`` badge above for more information.
+ 
 We currently provides:
  - DatasetSpace
  - UnionHypothesisSpace
