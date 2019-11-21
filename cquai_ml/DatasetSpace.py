@@ -69,12 +69,10 @@ class DatasetSpace:
         Check the hypothesis_space with the samples, which will get version_space
         :return:
         """
-        global hypothesis_space, is_vaild
         hypothesis_space = self.get_hypothesis_space()
         is_vaild = [True] * len(hypothesis_space)
 
-        def check(sample):
-            global hypothesis_space, is_vaild
+        def check(sample, hypothesis_space, is_vaild):
             if sample["target"]:  # positive sample
                 for i, hps in enumerate(hypothesis_space):
                     for j, f in enumerate(self.__features):
@@ -93,7 +91,7 @@ class DatasetSpace:
                         is_vaild[i] = False
             return sample
 
-        self.__data.apply(check, axis=1)
+        self.__data.apply(check, args=(hypothesis_space, is_vaild), axis=1)
         version_space = []
         for i, flag in enumerate(is_vaild):
             if flag:
@@ -141,9 +139,9 @@ class Enumerator:
     enumerator for hypothesis_space
     """
 
-    def __init__(self, max):
-        self.code = [0] * len(max)
-        self.base = max
+    def __init__(self, max_limit):
+        self.code = [0] * len(max_limit)
+        self.base = max_limit
         self.overflow = False
 
     def next(self):

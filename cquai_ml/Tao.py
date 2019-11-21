@@ -32,23 +32,14 @@ class TAO:
 
     def __init__(self, num_of_process=None, interval=None):
         print(
-            """
-        TTTTTTTTTTTTTTTTTTTTTTT                                
-        T:::::::::::::::::::::T                                
-        T:::::::::::::::::::::T                                
-        T:::::TT:::::::TT:::::T                                
-        TTTTTT  T:::::T  TTTTTTaaaaaaaaaaaaa     ooooooooooo   
-                T:::::T        a::::::::::::a  oo:::::::::::oo 
-                T:::::T        aaaaaaaaa:::::ao:::::::::::::::o
-                T:::::T                 a::::ao:::::ooooo:::::o
-                T:::::T          aaaaaaa:::::ao::::o     o::::o
-                T:::::T        aa::::::::::::ao::::o     o::::o
-                T:::::T       a::::aaaa::::::ao::::o     o::::o
-                T:::::T      a::::a    a:::::ao::::o     o::::o
-              TT:::::::TT    a::::a    a:::::ao:::::ooooo:::::o
-              T:::::::::T    a:::::aaaa::::::ao:::::::::::::::o
-              T:::::::::T     a::::::::::aa:::aoo:::::::::::oo 
-              TTTTTTTTTTT      aaaaaaaaaa  aaaa  ooooooooooo   \n\n"""
+            "TTTTTTTTTTTTTTTTTTTTTTT\nT:::::::::::::::::::::T\nT:::::::::::::::::::::T\nT:::::TT:::::::TT:::::T\nTTTTTT"
+            "  T:::::T  TTTTTTaaaaaaaaaaaaa     ooooooooooo\n        T:::::T        a::::::::::::a  oo:::::::::::oo\n  "
+            "      T:::::T        aaaaaaaaa:::::ao:::::::::::::::o\n        T:::::T                 a::::ao:::::ooooo::"
+            ":::o\n        T:::::T          aaaaaaa:::::ao::::o     o::::o\n        T:::::T        aa::::::::::::ao::::"
+            "o     o::::o\n        T:::::T       a::::aaaa::::::ao::::o     o::::o\n        T:::::T      a::::a    a:::"
+            "::ao::::o     o::::o\n      TT:::::::TT    a::::a    a:::::ao:::::ooooo:::::o\n      T:::::::::T    a:::::"
+            "aaaa::::::ao:::::::::::::::o\n      T:::::::::T     a::::::::::aa:::aoo:::::::::::oo\n      TTTTTTTTTTT   "
+            "   aaaaaaaaaa  aaaa  ooooooooooo\n\n"
         )
 
         TAO.NUM_OF_PROCESS = (

@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='cquai-ml',
-    version='1.0.2',
+    version='1.0.7',
     description=(
         'Implement machine learning algorithms with python without sklearn.'
     ),

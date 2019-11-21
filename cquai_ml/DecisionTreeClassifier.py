@@ -28,7 +28,8 @@ class DecisionTreeClassifier:
     def __init__(self, max_depth=2):
         self.max_depth = max_depth
 
-    def _entropy(self, y_cnt):
+    @staticmethod
+    def _entropy(y_cnt):
         prob = y_cnt / np.sum(y_cnt)
         prob = prob[prob > 0]
         return -np.sum(prob * np.log(prob))

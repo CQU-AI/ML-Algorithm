@@ -7,3 +7,4 @@ from .LogisticRegression import LogisticRegression
 from .LinearRegression import LinearRegression
 from .UnionHypothesisSpace import UnionHypothesisSpace
 from .Tao import TAO
+from .MelonData import load_melon

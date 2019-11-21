@@ -37,7 +37,7 @@ class LinearRegression:
         X_train, y_train = X - X_mean, y - y_mean
 
         res = minimize(
-            fun=LogisticRegression.cost_gradient,
+            fun=LinearRegression.cost_gradient,
             jac=True,
             x0=np.zeros(X_train.shape[1]),
             args=(X_train, y_train),

@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 
-def load_melon(return_array=False):
+def load_melon(return_array=False, return_X_y=False):
     # pd.read_csv('https://raw.githubusercontent.com/CQU-AI/Watermelon-book-puzzles/master/Chapter-04/melon_data.csv',index_col=0)
     melon_data = pd.DataFrame(
         [
@@ -27,9 +27,24 @@ def load_melon(return_array=False):
         columns=["色泽", "根蒂", "敲声", "纹理", "脐部", "触感", "密度", "含糖率", "好瓜"],
     )
 
-    if return_array:
+    if return_array and return_X_y:
+        for f in ["色泽", "根蒂", "敲声", "纹理", "脐部", "触感", "好瓜"]:
+            melon_data[f] = LabelEncoder().fit_transform(melon_data[f])
+        return (
+            melon_data[["色泽", "根蒂", "敲声", "纹理", "脐部", "触感", "密度", "含糖率"]].values,
+            melon_data["好瓜"].values,
+        )
+
+    elif return_array and not return_X_y:
         for f in ["色泽", "根蒂", "敲声", "纹理", "脐部", "触感", "好瓜"]:
             melon_data[f] = LabelEncoder().fit_transform(melon_data[f])
         return melon_data.values
+
+    elif not return_array and return_X_y:
+        return (
+            melon_data[["色泽", "根蒂", "敲声", "纹理", "脐部", "触感", "密度", "含糖率"]],
+            melon_data["好瓜"],
+        )
+
     else:
         return melon_data

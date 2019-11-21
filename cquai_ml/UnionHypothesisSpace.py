@@ -72,7 +72,7 @@ class UnionHypothesisSpace:
                 if not self.hypothsis_code_pool[(h_l | h_r)]:
                     self.hypothsis_code_pool[(h_l | h_r)] = True
                     self.his_hypothsis_code["k=" + str(k + 1)].append((h_l | h_r))
-                print("k={} i={} j={}".format(k, i, j), end="\r")
+                print("k={} i={} j={}".format(k, i, j))
 
     def run(self, k=1):
         """
