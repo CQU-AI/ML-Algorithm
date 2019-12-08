@@ -4,7 +4,7 @@ sigmoid = lambda x: 1 / (1 + np.exp(-x))
 
 
 def nn_bpa(
-        X, y, learning_rate=0.1, stop_loss=0.001, max_iteration=1000, num_of_layer=2
+    X, y, learning_rate=0.1, stop_loss=0.001, max_iteration=1000, num_of_layer=2
 ):
     V = np.random.rand(X.shape[1], num_of_layer)
     W = np.random.rand(num_of_layer, y.shape[0])
@@ -32,7 +32,7 @@ def nn_bpa(
 
 
 def nn_bps(
-        X, y, learning_rate=0.1, stop_loss=0.001, max_iteration=1000, num_of_layer=2
+    X, y, learning_rate=0.1, stop_loss=0.001, max_iteration=1000, num_of_layer=2
 ):
     V = np.random.rand(X.shape[1], num_of_layer)
     W = np.random.rand(num_of_layer, y.shape[0])
@@ -67,5 +67,3 @@ if __name__ == "__main__":
     X, y = load_melon(return_X_y=True, return_array=True)
     nn_bpa(X, y)
     nn_bps(X, y)
-
-

@@ -147,10 +147,10 @@ class DecisionTreeClassifier:
         return np.array([self.classes_[np.argmax(self._nodes[p].value)] for p in pred])
 
 
-from sklearn.datasets import load_breast_cancer
-from sklearn.tree import DecisionTreeClassifier as skDecisionTreeClassifier
-
 if __name__ == "__main__":
+    from sklearn.datasets import load_breast_cancer
+    from sklearn.tree import DecisionTreeClassifier as skDecisionTreeClassifier
+
     X, y = load_breast_cancer(return_X_y=True)
     clf1 = DecisionTreeClassifier(max_depth=1).fit(X, y)
     clf2 = skDecisionTreeClassifier(max_depth=1, random_state=0).fit(X, y)

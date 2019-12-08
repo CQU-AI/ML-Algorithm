@@ -9,14 +9,16 @@ from .UnionHypothesisSpace import UnionHypothesisSpace
 from .Tao import TAO
 from .MelonData import load_melon
 
-for i in [DecisionTreeClassifier,
-          DecisionTreeRegressor,
-          DatasetSpace,
-          KNeighborsClassifier,
-          LinearDiscriminantAnalysis,
-          LogisticRegression,
-          LinearRegression,
-          UnionHypothesisSpace,
-          TAO,
-          load_melon]:
+for i in [
+    DecisionTreeClassifier,
+    DecisionTreeRegressor,
+    DatasetSpace,
+    KNeighborsClassifier,
+    LinearDiscriminantAnalysis,
+    LogisticRegression,
+    LinearRegression,
+    UnionHypothesisSpace,
+    TAO,
+    load_melon,
+]:
     pass
